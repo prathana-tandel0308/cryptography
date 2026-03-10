@@ -1,0 +1,13 @@
+flask
+flask-sqlalchemy
+flask-login
+flask-wtf
+flask-bcrypt
+pycryptodome
+cryptography
+argon2-cffi
+python-dotenv
+email-validator
+qrcode
+gunicorn
+pytest
