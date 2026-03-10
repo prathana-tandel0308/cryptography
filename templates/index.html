@@ -1,0 +1,957 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- Hero Section with 3D Tilt Effect -->
+<div class="hero" id="hero">
+    <div class="hero-content">
+        <div class="hero-badge" data-animate="glitch">
+            <span class="badge-text">⚡ client-side encryption</span>
+            <span class="badge-glitch">⚡ client-side encryption</span>
+        </div>
+        
+        <h1 class="hero-title" data-animate="reveal">
+            <span class="title-line">
+                <span class="title-word">File</span>
+                <span class="title-word accent">encryption,</span>
+            </span>
+            <span class="title-line">
+                <span class="title-word">fully</span>
+                <span class="title-word gradient">under</span>
+                <span class="title-word gradient">your</span>
+                <span class="title-word gradient">control</span>
+            </span>
+        </h1>
+        
+        <p class="hero-subtitle" data-animate="fade-up" data-delay="200">
+            Upload, encrypt, and manage files with zero-knowledge architecture. 
+            <span class="subtitle-highlight">Your keys, your data, your rules.</span>
+        </p>
+        
+        <div class="hero-stats" data-animate="fade-up" data-delay="300">
+            <div class="stat-card">
+                <div class="stat-icon">🔐</div>
+                <div class="stat-content">
+                    <strong class="stat-value counter" data-target="6">0</strong>
+                    <span class="stat-label">algorithms</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">🔑</div>
+                <div class="stat-content">
+                    <strong class="stat-value counter" data-target="0">0</strong>
+                    <span class="stat-label">keys stored</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">📁</div>
+                <div class="stat-content">
+                    <strong class="stat-value counter" data-target="12">0</strong>
+                    <span class="stat-label">file types</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="hero-actions" data-animate="fade-up" data-delay="400">
+            <a href="{{ url_for('auth.register') }}" class="btn-primary">
+                <span class="btn-text">Start encrypting</span>
+                <span class="btn-icon">→</span>
+                <span class="btn-glow"></span>
+            </a>
+            <a href="#features" class="btn-secondary">
+                <span class="btn-dot"></span>
+                View features
+            </a>
+        </div>
+    </div>
+
+    <div class="hero-visual" data-animate="slide-up" data-delay="200">
+        <div class="visual-container" id="visualContainer">
+            <!-- Floating particles -->
+            <div class="floating-particle" style="--x: 20%; --y: 30%; --delay: 0s;"></div>
+            <div class="floating-particle" style="--x: 70%; --y: 60%; --delay: 2s;"></div>
+            <div class="floating-particle" style="--x: 40%; --y: 80%; --delay: 1s;"></div>
+            
+            <!-- Encryption visualization -->
+            <div class="encryption-ring">
+                <svg class="ring-svg" viewBox="0 0 200 200">
+                    <circle class="ring-bg" cx="100" cy="100" r="80" />
+                    <circle class="ring-progress" cx="100" cy="100" r="80" 
+                            stroke-dasharray="502" stroke-dashoffset="125.5" />
+                </svg>
+                <div class="ring-content">
+                    <span class="ring-icon">🔒</span>
+                </div>
+            </div>
+
+            <div class="file-nodes">
+                <div class="file-node" style="--i: 1">
+                    <span class="node-icon">📄</span>
+                    <span class="node-label">input.pdf</span>
+                </div>
+                <div class="file-node" style="--i: 2">
+                    <span class="node-icon">⚡</span>
+                    <span class="node-label">AES-256</span>
+                </div>
+                <div class="file-node" style="--i: 3">
+                    <span class="node-icon">📁</span>
+                    <span class="node-label">output.enc</span>
+                </div>
+            </div>
+
+            <div class="connection-lines">
+                <svg class="lines-svg">
+                    <line x1="30%" y1="50%" x2="45%" y2="50%" class="line-animated" />
+                    <line x1="55%" y1="50%" x2="70%" y2="50%" class="line-animated" />
+                </svg>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Features Section with Magnetic Cards -->
+<section id="features" class="features">
+    <div class="section-header" data-animate="reveal">
+        <span class="section-eyebrow">why choose us</span>
+        <h2 class="section-title">
+            Everything you need
+            <span class="title-accent">for secure encryption</span>
+        </h2>
+        <p class="section-description">
+            Compare performance across multiple algorithms in real-time with detailed metrics
+        </p>
+    </div>
+
+    <div class="feature-grid" id="featureGrid">
+        <div class="feature-card magnetic" data-animate="scale-in" data-delay="100" data-strength="20">
+            <div class="card-glow"></div>
+            <div class="card-content">
+                <div class="card-icon">🔐</div>
+                <div class="card-number" data-number="01">01</div>
+                <h3 class="card-title">Multi-algorithm</h3>
+                <p class="card-description">AES-256-CBC, ChaCha20-Poly1305, Blowfish, CAST5, ARC2, 3DES</p>
+                <div class="card-tech">
+                    <span>CBC</span>
+                    <span>GCM</span>
+                    <span>CTR</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="feature-card magnetic" data-animate="scale-in" data-delay="200" data-strength="20">
+            <div class="card-glow"></div>
+            <div class="card-content">
+                <div class="card-icon">📊</div>
+                <div class="card-number" data-number="02">02</div>
+                <h3 class="card-title">Real-time metrics</h3>
+                <p class="card-description">Track encryption time, memory usage, and throughput for comparison</p>
+                <div class="card-tech">
+                    <span>ms</span>
+                    <span>MB/s</span>
+                    <span>RAM</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="feature-card magnetic" data-animate="scale-in" data-delay="300" data-strength="20">
+            <div class="card-glow"></div>
+            <div class="card-content">
+                <div class="card-icon">🔑</div>
+                <div class="card-number" data-number="03">03</div>
+                <h3 class="card-title">Zero-knowledge</h3>
+                <p class="card-description">Keys derived locally with PBKDF2. Your password never leaves</p>
+                <div class="card-tech">
+                    <span>PBKDF2</span>
+                    <span>salt</span>
+                    <span>IV</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="feature-card magnetic" data-animate="scale-in" data-delay="400" data-strength="20">
+            <div class="card-glow"></div>
+            <div class="card-content">
+                <div class="card-icon">📁</div>
+                <div class="card-number" data-number="04">04</div>
+                <h3 class="card-title">File management</h3>
+                <p class="card-description">Upload, encrypt, download, delete. Complete control over your data</p>
+                <div class="card-tech">
+                    <span>1GB max</span>
+                    <span>any type</span>
+                    <span>secure</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Algorithms Showcase with Matrix Effect -->
+<section class="algorithms-section">
+    <div class="section-header compact" data-animate="fade-up">
+        <h2 class="section-title small">
+            <span class="title-bracket">{</span>
+            supported algorithms
+            <span class="title-bracket">}</span>
+        </h2>
+    </div>
+
+    <div class="algorithms-showcase" data-animate="fade-up">
+        <div class="algorithm-matrix" id="matrixEffect"></div>
+        <div class="algorithm-tags">
+            <span class="algorithm-tag" data-algo="aes">
+                <span class="tag-dot"></span>
+                AES-256-CBC
+                <span class="tag-badge">recommended</span>
+            </span>
+            <span class="algorithm-tag" data-algo="chacha">
+                <span class="tag-dot"></span>
+                ChaCha20-Poly1305
+                <span class="tag-speed">fastest</span>
+            </span>
+            <span class="algorithm-tag" data-algo="blowfish">
+                <span class="tag-dot"></span>
+                Blowfish
+            </span>
+            <span class="algorithm-tag" data-algo="3des">
+                <span class="tag-dot"></span>
+                Triple DES
+            </span>
+            <span class="algorithm-tag" data-algo="cast5">
+                <span class="tag-dot"></span>
+                CAST5
+            </span>
+            <span class="algorithm-tag" data-algo="arc2">
+                <span class="tag-dot"></span>
+                ARC2
+            </span>
+        </div>
+    </div>
+</section>
+
+<style>
+    /* Custom properties */
+    :root {
+        --primary: #6366f1;
+        --primary-glow: rgba(99, 102, 241, 0.5);
+        --secondary: #8b5cf6;
+        --accent: #ec4899;
+        --background: var(--bg-primary);
+        --surface: var(--bg-secondary);
+        --text: var(--text-primary);
+        --text-secondary: var(--text-secondary);
+        --border: var(--border-color);
+    }
+
+    /* Hero Section */
+    .hero {
+        min-height: 90vh;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        align-items: center;
+        padding: 40px 24px;
+        max-width: 1400px;
+        margin: 0 auto;
+        position: relative;
+        overflow: hidden;
+    }
+
+    /* Glitch effect */
+    .hero-badge {
+        position: relative;
+        margin-bottom: 32px;
+        cursor: default;
+    }
+
+    .badge-text {
+        display: inline-block;
+        padding: 8px 16px;
+        background: rgba(var(--primary), 0.1);
+        border: 1px solid rgba(var(--primary), 0.2);
+        border-radius: 30px;
+        font-size: 0.85rem;
+        font-weight: 500;
+        letter-spacing: 0.5px;
+        color: var(--primary);
+        position: relative;
+        z-index: 2;
+    }
+
+    .badge-glitch {
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 8px 16px;
+        background: rgba(var(--primary), 0.1);
+        border: 1px solid rgba(var(--primary), 0.2);
+        border-radius: 30px;
+        font-size: 0.85rem;
+        font-weight: 500;
+        letter-spacing: 0.5px;
+        color: var(--accent);
+        opacity: 0.5;
+        z-index: 1;
+        animation: glitch 3s infinite;
+    }
+
+    @keyframes glitch {
+        0%, 100% { transform: translate(0); }
+        10% { transform: translate(-2px, 2px); }
+        20% { transform: translate(2px, -2px); }
+        30% { transform: translate(-2px, -2px); }
+        40% { transform: translate(2px, 2px); }
+        50% { transform: translate(0); }
+    }
+
+    /* Reveal animation for title */
+    .hero-title {
+        font-size: 4rem;
+        font-weight: 700;
+        line-height: 1.1;
+        margin-bottom: 24px;
+    }
+
+    .title-line {
+        display: block;
+        overflow: hidden;
+        margin-bottom: 8px;
+    }
+
+    .title-word {
+        display: inline-block;
+        transform: translateY(100%);
+        animation: revealWord 0.8s ease forwards;
+    }
+
+    .title-word.gradient {
+        background: linear-gradient(135deg, var(--primary), var(--accent));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    @keyframes revealWord {
+        to { transform: translateY(0); }
+    }
+
+    /* Stats cards */
+    .hero-stats {
+        display: flex;
+        gap: 32px;
+        margin-bottom: 48px;
+    }
+
+    .stat-card {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 16px 24px;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        transition: all 0.3s;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .stat-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: linear-gradient(90deg, var(--primary), var(--accent));
+        transform: translateX(-100%);
+        transition: transform 0.3s;
+    }
+
+    .stat-card:hover::before {
+        transform: translateX(0);
+    }
+
+    .stat-icon {
+        font-size: 2rem;
+        filter: drop-shadow(0 0 10px var(--primary-glow));
+    }
+
+    .stat-content {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .stat-value {
+        font-size: 2.2rem;
+        font-weight: 700;
+        background: linear-gradient(135deg, var(--primary), var(--accent));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        line-height: 1;
+    }
+
+    .stat-label {
+        font-size: 0.85rem;
+        color: var(--text-secondary);
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    /* Buttons */
+    .btn-primary {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        padding: 16px 32px;
+        background: linear-gradient(135deg, var(--primary), var(--secondary));
+        border: none;
+        border-radius: 12px;
+        color: white;
+        font-weight: 600;
+        text-decoration: none;
+        overflow: hidden;
+        transition: all 0.3s;
+        z-index: 1;
+    }
+
+    .btn-glow {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: radial-gradient(circle at 30% 50%, white, transparent);
+        opacity: 0;
+        transition: opacity 0.3s;
+        z-index: -1;
+    }
+
+    .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 30px var(--primary-glow);
+    }
+
+    .btn-primary:hover .btn-glow {
+        opacity: 0.3;
+    }
+
+    .btn-icon {
+        transition: transform 0.3s;
+    }
+
+    .btn-primary:hover .btn-icon {
+        transform: translateX(5px);
+    }
+
+    .btn-secondary {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 16px 32px;
+        color: var(--text);
+        text-decoration: none;
+        font-weight: 500;
+        transition: all 0.3s;
+    }
+
+    .btn-dot {
+        width: 8px;
+        height: 8px;
+        background: var(--primary);
+        border-radius: 50%;
+        transition: all 0.3s;
+    }
+
+    .btn-secondary:hover .btn-dot {
+        transform: scale(1.5);
+        box-shadow: 0 0 15px var(--primary-glow);
+    }
+
+    /* Hero visual with 3D effect */
+    .hero-visual {
+        perspective: 1000px;
+    }
+
+    .visual-container {
+        position: relative;
+        height: 500px;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 30px;
+        overflow: hidden;
+        transform-style: preserve-3d;
+        transition: transform 0.1s ease;
+    }
+
+    .floating-particle {
+        position: absolute;
+        width: 4px;
+        height: 4px;
+        background: var(--primary);
+        border-radius: 50%;
+        left: var(--x);
+        top: var(--y);
+        animation: floatParticle 10s infinite linear;
+        opacity: 0.3;
+    }
+
+    @keyframes floatParticle {
+        0% { transform: translate(0, 0); opacity: 0.3; }
+        50% { transform: translate(20px, -20px); opacity: 0.6; }
+        100% { transform: translate(0, 0); opacity: 0.3; }
+    }
+
+    .encryption-ring {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 200px;
+        height: 200px;
+    }
+
+    .ring-svg {
+        width: 100%;
+        height: 100%;
+        transform: rotate(-90deg);
+    }
+
+    .ring-bg {
+        fill: none;
+        stroke: var(--border);
+        stroke-width: 3;
+    }
+
+    .ring-progress {
+        fill: none;
+        stroke: url(#gradient);
+        stroke-width: 3;
+        stroke-linecap: round;
+        animation: rotate 10s linear infinite;
+    }
+
+    @keyframes rotate {
+        from { transform: rotate(0); }
+        to { transform: rotate(360deg); }
+    }
+
+    .ring-content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 3rem;
+        animation: pulse 2s ease-in-out infinite;
+    }
+
+    .file-nodes {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding: 40px;
+    }
+
+    .file-node {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+        padding: 16px;
+        background: var(--bg-tertiary);
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        animation: nodeFloat 3s ease-in-out infinite;
+        animation-delay: calc(var(--i) * 0.2s);
+    }
+
+    @keyframes nodeFloat {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-10px); }
+    }
+
+    .node-icon {
+        font-size: 2rem;
+    }
+
+    .node-label {
+        font-size: 0.7rem;
+        color: var(--text-secondary);
+    }
+
+    /* Features section */
+    .features {
+        padding: 100px 24px;
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+
+    .section-header {
+        text-align: center;
+        margin-bottom: 60px;
+    }
+
+    .section-eyebrow {
+        display: inline-block;
+        padding: 4px 12px;
+        background: rgba(var(--primary), 0.1);
+        border-radius: 20px;
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: var(--primary);
+        margin-bottom: 16px;
+    }
+
+    .section-title {
+        font-size: 3rem;
+        font-weight: 700;
+        margin-bottom: 16px;
+    }
+
+    .title-accent {
+        display: block;
+        background: linear-gradient(135deg, var(--primary), var(--accent));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .feature-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+
+    .feature-card {
+        position: relative;
+        padding: 40px;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 24px;
+        transition: all 0.3s;
+        cursor: default;
+        overflow: hidden;
+    }
+
+    .card-glow {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: radial-gradient(circle at var(--x, 50%) var(--y, 50%), 
+                                   rgba(99, 102, 241, 0.1), 
+                                   transparent 50%);
+        opacity: 0;
+        transition: opacity 0.3s;
+        pointer-events: none;
+    }
+
+    .feature-card:hover .card-glow {
+        opacity: 1;
+    }
+
+    .card-icon {
+        font-size: 2.5rem;
+        margin-bottom: 24px;
+    }
+
+    .card-number {
+        position: relative;
+        font-size: 0.85rem;
+        color: var(--text-secondary);
+        margin-bottom: 16px;
+        transition: color 0.3s;
+    }
+
+    .card-number::before {
+        content: attr(data-number);
+        position: absolute;
+        left: 0;
+        color: var(--primary);
+        opacity: 0;
+        transform: translateX(-10px);
+        transition: all 0.3s;
+    }
+
+    .feature-card:hover .card-number {
+        color: transparent;
+    }
+
+    .feature-card:hover .card-number::before {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    .card-title {
+        font-size: 1.5rem;
+        margin-bottom: 12px;
+    }
+
+    .card-description {
+        color: var(--text-secondary);
+        margin-bottom: 20px;
+        line-height: 1.6;
+    }
+
+    .card-tech {
+        display: flex;
+        gap: 8px;
+    }
+
+    .card-tech span {
+        padding: 4px 8px;
+        background: var(--bg-tertiary);
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        font-size: 0.7rem;
+        font-family: monospace;
+    }
+
+    /* Algorithms section */
+    .algorithms-section {
+        padding: 60px 24px 100px;
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+
+    .section-header.compact {
+        margin-bottom: 40px;
+    }
+
+    .section-title.small {
+        font-size: 2rem;
+    }
+
+    .title-bracket {
+        color: var(--primary);
+        opacity: 0.5;
+    }
+
+    .algorithm-matrix {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: repeating-linear-gradient(
+            0deg,
+            rgba(99, 102, 241, 0.03) 0px,
+            rgba(99, 102, 241, 0.03) 1px,
+            transparent 1px,
+            transparent 20px
+        );
+        pointer-events: none;
+        animation: matrixMove 20s linear infinite;
+    }
+
+    @keyframes matrixMove {
+        from { background-position: 0 0; }
+        to { background-position: 0 20px; }
+    }
+
+    .algorithm-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+        justify-content: center;
+        position: relative;
+        z-index: 2;
+    }
+
+    .algorithm-tag {
+        position: relative;
+        padding: 12px 24px;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 30px;
+        font-family: monospace;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        transition: all 0.3s;
+    }
+
+    .algorithm-tag:hover {
+        border-color: var(--primary);
+        transform: translateY(-2px);
+        box-shadow: 0 5px 20px rgba(99, 102, 241, 0.2);
+    }
+
+    .tag-dot {
+        width: 8px;
+        height: 8px;
+        background: var(--primary);
+        border-radius: 50%;
+        animation: pulse 2s infinite;
+    }
+
+    .algorithm-tag[data-algo="aes"] .tag-dot { background: var(--primary); }
+    .algorithm-tag[data-algo="chacha"] .tag-dot { background: var(--accent); }
+
+    .tag-badge, .tag-speed {
+        padding: 2px 8px;
+        background: rgba(99, 102, 241, 0.1);
+        border-radius: 12px;
+        font-size: 0.6rem;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    .tag-speed {
+        background: rgba(236, 72, 153, 0.1);
+        color: var(--accent);
+    }
+
+    @keyframes pulse {
+        0%, 100% { opacity: 0.5; transform: scale(1); }
+        50% { opacity: 1; transform: scale(1.2); }
+    }
+
+    /* Responsive */
+    @media (max-width: 968px) {
+        .hero {
+            grid-template-columns: 1fr;
+            text-align: center;
+        }
+        
+        .hero-title {
+            font-size: 3rem;
+        }
+        
+        .hero-stats {
+            justify-content: center;
+        }
+        
+        .feature-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .hero-stats {
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .stat-card {
+            width: 100%;
+        }
+        
+        .section-title {
+            font-size: 2rem;
+        }
+        
+        .algorithm-tags {
+            flex-direction: column;
+            align-items: stretch;
+        }
+    }
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // 3D Tilt effect on hero visual
+        const visual = document.getElementById('visualContainer');
+        if (visual) {
+            visual.addEventListener('mousemove', (e) => {
+                const rect = visual.getBoundingClientRect();
+                const x = (e.clientX - rect.left) / rect.width - 0.5;
+                const y = (e.clientY - rect.top) / rect.height - 0.5;
+                
+                visual.style.transform = `
+                    perspective(1000px)
+                    rotateY(${x * 10}deg)
+                    rotateX(${-y * 10}deg)
+                `;
+            });
+            
+            visual.addEventListener('mouseleave', () => {
+                visual.style.transform = 'perspective(1000px) rotateY(0) rotateX(0)';
+            });
+        }
+
+        // Magnetic effect on cards
+        const cards = document.querySelectorAll('.magnetic');
+        cards.forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                
+                const deltaX = (x - centerX) / centerX;
+                const deltaY = (y - centerY) / centerY;
+                
+                card.style.transform = `
+                    translate(${deltaX * 10}px, ${deltaY * 10}px)
+                `;
+                
+                // Update glow position
+                const glow = card.querySelector('.card-glow');
+                if (glow) {
+                    glow.style.setProperty('--x', `${(x / rect.width) * 100}%`);
+                    glow.style.setProperty('--y', `${(y / rect.height) * 100}%`);
+                }
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translate(0, 0)';
+            });
+        });
+
+        // Intersection Observer for animations
+        const animatedElements = document.querySelectorAll('[data-animate]');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animated');
+                    
+                    // Handle title reveal animation
+                    if (entry.target.classList.contains('hero-title')) {
+                        const words = entry.target.querySelectorAll('.title-word');
+                        words.forEach((word, index) => {
+                            word.style.animationDelay = `${index * 0.1}s`;
+                        });
+                    }
+                }
+            });
+        }, { threshold: 0.1 });
+
+        animatedElements.forEach(el => observer.observe(el));
+
+        // Counter animation
+        const counters = document.querySelectorAll('.counter');
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const counter = entry.target;
+                    const target = parseInt(counter.getAttribute('data-target'));
+                    let current = 0;
+                    const increment = target / 50;
+                    
+                    const updateCounter = () => {
+                        if (current < target) {
+                            current += increment;
+                            counter.textContent = Math.ceil(current);
+                            requestAnimationFrame(updateCounter);
+                        } else {
+                            counter.textContent = target;
+                        }
+                    };
+                    
+                    updateCounter();
+                    counterObserver.unobserve(counter);
+                }
+            });
+        });
+
+        counters.forEach(counter => counterObserver.observe(counter));
+    });
+</script>
+{% endblock %}
